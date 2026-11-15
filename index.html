@@ -3,203 +3,343 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- Not indexed until the public launch is decided (trademark clearance first, BRAND.md §10; D-68). Remove this line at launch. -->
 <meta name="robots" content="noindex, nofollow">
-<title>Verifika Pro – verified professionals, shown with proof</title>
-<meta name="description" content="Verifika Pro connects companies with professionals checked by specialised recruiters: identity, structured interview, references and track record.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+<title data-i18n="meta.title">Verifika Pro – verified professionals, ready to interview</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="Profiles interviewed by a specialised recruiter and checked by our team, shown with proof. First profiles within 2 working days for the roles we cover. Free for professionals.">
+<link rel="canonical" href="https://verifika.pro/">
+<link rel="alternate" hreflang="en" href="https://verifika.pro/">
+<link rel="alternate" hreflang="fr" href="https://verifika.pro/fr/">
+<link rel="alternate" hreflang="x-default" href="https://verifika.pro/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verifika Pro">
+<meta property="og:title" data-i18n-attr="content:meta.og_title" content="Verifika Pro – Checked by people, shown with proof">
+<meta property="og:description" data-i18n-attr="content:meta.description" content="Profiles interviewed by a specialised recruiter and checked by our team, shown with proof. First profiles within 2 working days for the roles we cover. Free for professionals.">
+<meta property="og:image" content="https://verifika.pro/assets/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://verifika.pro/assets/share.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=latin">
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site-config.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Verifika Pro","url":"https://verifika.pro/","logo":"https://verifika.pro/assets/verifika-symbol.svg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Nothing for professionals. For companies, publishing a need is free; you pay when a mission starts or a hire is made."}},{"@type":"Question","name":"How fast do I receive profiles?","acceptedAnswer":{"@type":"Answer","text":"First profiles within 2 working days for the roles we cover. Your feedback on each profile makes the next ones fit better."}},{"@type":"Question","name":"I am a freelancer in Africa. Can I work for European companies?","acceptedAnswer":{"@type":"Answer","text":"Yes, for remote roles that match your time zone and languages. Verification is what makes the difference."}},{"@type":"Question","name":"How long does verification take?","acceptedAnswer":{"@type":"Answer","text":"Profiles that match open positions are interviewed first; others as soon as a recruiter of the field is available."}},{"@type":"Question","name":"I am an agency. Will you contact my client?","acceptedAnswer":{"@type":"Answer","text":"Never. Your end client stays confidential, and a professional is presented to it only once, through you."}},{"@type":"Question","name":"How is my data protected?","acceptedAnswer":{"@type":"Answer","text":"Single-use sign-in codes, access by role, every action logged. Download your data or ask for deletion at any time."}}]}</script>
 </head>
-<body>
-<a class="sr-only" href="#main" data-i18n="skip">Skip to content</a>
+<body class="landing">
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<nav class="rail" aria-label="Chapters" data-i18n-attr="aria-label:rail.label">
+  <a class="r1" href="#proof"><span class="n"></span><span data-i18n="rail.proof">Proof</span></a>
+  <a class="r2" href="#journey"><span class="n"></span><span data-i18n="rail.journey">Journey</span></a>
+  <a class="r3" href="#companies"><span class="n"></span><span data-i18n="rail.companies">Companies</span></a>
+  <a class="r4" href="#agencies"><span class="n"></span><span data-i18n="rail.agencies">Agencies</span></a>
+  <a class="r5" href="#professionals"><span class="n"></span><span data-i18n="rail.pros">Professionals</span></a>
+  <a class="r6" href="#verification"><span class="n"></span><span data-i18n="rail.verification">Verification</span></a>
+  <a class="r7" href="#recruiters"><span class="n"></span><span data-i18n="rail.recruiters">Recruiters</span></a>
+</nav>
+
 <header class="top">
-  <div class="wrap top-bar">
+  <div class="w top-bar">
     <a class="brand" href="./" aria-label="Verifika Pro">
-      <img class="logo-light" src="assets/verifika-pro-horizontal.svg" alt="Verifika Pro" width="168" height="36">
-      <img class="logo-dark" src="assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="168" height="36">
+      <img class="logo-light" src="/assets/verifika-pro-horizontal.svg" alt="Verifika Pro" width="140" height="30">
+      <img class="logo-dark" src="/assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="140" height="30">
     </a>
-    <nav class="menu" aria-label="Menu">
-      <a href="#how" data-i18n="nav.how">How it works</a>
-      <a href="#levels" data-i18n="nav.levels">Verification</a>
-      <a href="#companies" data-i18n="nav.companies">Companies</a>
-      <a href="#professionals" data-i18n="nav.pros">Professionals</a>
-      <a href="#faq" data-i18n="nav.faq">Questions</a>
+    <nav class="main-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+      <a class="nv" href="#companies" data-i18n="nav.companies">Companies</a>
+      <a class="nv" href="#agencies" data-i18n="nav.agencies">Agencies</a>
+      <a class="nv" href="#professionals" data-i18n="nav.pros">Professionals</a>
+      <a class="nv" href="#recruiters" data-i18n="nav.recruiters">Recruiters</a>
+      <a class="nv" href="#verification" data-i18n="nav.verify">How we verify</a>
     </nav>
-    <div class="tools">
-      <select class="lang" id="lang" aria-label="Language / Langue"><option value="en">EN</option><option value="fr">FR</option></select>
-      <a class="btn btn-quiet" href="app/" data-i18n="nav.login">Sign in</a>
-      <a class="btn btn-primary" href="app/?page=join" data-i18n="nav.join">Create an account</a>
+    <div class="top-actions">
+      <a class="ul top-signin" href="/app/" data-portal="login" data-i18n="nav.signin">Sign in</a>
+      <a class="btn btn-s btn-sm" href="#professionals" data-cta="professional:header" data-i18n="nav.profile">Create my profile</a>
+      <a class="btn btn-p btn-sm" href="#companies" data-cta="company:header" data-i18n="nav.hire">Hire</a>
     </div>
   </div>
 </header>
 
-<main id="main">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow" data-i18n="hero.eyebrow">A network of verified professionals</span>
-        <h1 data-i18n="hero.title">Professionals checked by people, shown with proof.</h1>
-        <p class="lead" data-i18n="hero.lead">Every profile is checked by a specialised recruiter: identity, a structured interview, references and track record. Companies hire with less risk. Professionals reach work they would not find alone.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary btn-lg" href="app/?page=join&amp;kind=company" data-i18n="hero.cta_company">I am hiring</a>
-          <a class="btn btn-lg" href="app/?page=join&amp;kind=person" data-i18n="hero.cta_person">I am a candidate or a consultant</a>
-        </div>
-        <p class="note" data-i18n="hero.note">Freelance and permanent · Europe and Africa · Anonymised profiles until the interview</p>
+<main id="main" class="wrapall">
+  <section id="proof" class="w hero">
+    <div class="hero-text">
+      <span class="eb"><span class="mk"></span><span data-i18n="hero.eyebrow">Checked by people, shown with proof</span></span>
+      <h1 class="h1" data-i18n="hero.title">Verified professionals, ready to interview.</h1>
+      <p class="lead"><span data-cfg-text="promise">First profiles within 2 working days for the roles we cover.</span> <span data-i18n="hero.lead">Each one is interviewed by a specialised recruiter and checked by our team. Professionals get a verified profile that opens the right doors, for free.</span></p>
+      <div class="tiles">
+        <a class="tile" href="#companies" data-tile="company"><span class="tt"><img src="/assets/badge-level-2.svg" alt="" width="22" height="22"><span data-i18n="tile.company">I am hiring</span><span class="ar" aria-hidden="true">→</span></span><span class="pr" data-i18n="tile.company_p">Short lists in 2 working days. Pay on results.</span></a>
+        <a class="tile" href="#agencies" data-tile="agency"><span class="tt"><img src="/assets/badge-level-1.svg" alt="" width="22" height="22"><span data-i18n="tile.agency">I am an agency</span><span class="ar" aria-hidden="true">→</span></span><span class="pr" data-i18n="tile.agency_p">More verified candidates. Your client stays yours.</span></a>
+        <a class="tile" href="#professionals" data-tile="professional"><span class="tt"><img src="/assets/badge-level-0.svg" alt="" width="22" height="22"><span data-i18n="tile.pro">I am a consultant or candidate</span><span class="ar" aria-hidden="true">→</span></span><span class="pr" data-i18n="tile.pro_p">Free verified profile. You say yes to each position.</span></a>
+        <a class="tile" href="#recruiters" data-tile="recruiter"><span class="tt"><img src="/assets/badge-level-3.svg" alt="" width="22" height="22"><span data-i18n="tile.recruiter">I am a recruiter</span><span class="ar" aria-hidden="true">→</span></span><span class="pr" data-i18n="tile.recruiter_p">Interview professionals in your speciality.</span></a>
       </div>
-      <div class="sample">
-        <span class="sample-tag" data-i18n="sample.tag">Fictitious example</span>
-        <article class="card card-lg" aria-label="Example of a verified profile">
-          <div class="profile-head">
-            <div class="avatar" aria-hidden="true">V</div>
-            <div>
-              <h3 data-i18n="sample.title">Senior SAP FICO consultant</h3>
-              <span class="ref">P-0142</span>
-            </div>
+    </div>
+    <aside class="herocard" aria-label="Fictitious example of a verified profile" data-i18n-attr="aria-label:hero.card_label">
+      <div class="hc-head">
+        <div class="hc-who">
+          <img src="/assets/verifika-symbol.svg" alt="" width="44" height="44">
+          <div class="hc-id">
+            <span class="hc-name" data-i18n="hero.card_title">ServiceNow developer</span>
+            <span class="mono muted" data-i18n="hero.card_meta">P-0231 · 7 years · Hybrid, Brussels</span>
           </div>
-          <div class="level"><img src="assets/badge-level-2.svg" alt="" width="28" height="28"><span data-i18n="sample.level">Level 2 · Validated by Verifika · checked 12 Nov 2026</span></div>
-          <ul class="checks">
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="sample.c1">Structured 45-minute interview with a specialised recruiter</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="sample.c2">Identity and exchange confirmed by the Verifika team</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="sample.c3">English C1 and French C2 checked orally</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="sample.c4">Mandatory criteria of the position: all confirmed with proof</span></li>
-          </ul>
-          <div class="chips"><span class="chip" data-i18n="sample.k1">8 years of experience</span><span class="chip" data-i18n="sample.k2">Hybrid · Brussels</span><span class="chip" data-i18n="sample.k3">Available in January</span></div>
-        </article>
+        </div>
+        <span class="tag" data-i18n="fictitious">Fictitious example</span>
+      </div>
+      <div class="hc-levels">
+        <div class="lv lv1"><img src="/assets/badge-level-0.svg" alt="" width="28" height="28"><span data-i18n="level.0">Level 0 · Declared</span></div>
+        <div class="lv lv2"><img src="/assets/badge-level-1.svg" alt="" width="28" height="28"><span data-i18n="level.1">Level 1 · Recruiter interview</span></div>
+        <div class="lv lv3"><img src="/assets/badge-level-2.svg" alt="" width="28" height="28"><span data-i18n="level.2">Level 2 · Validated by Verifika</span></div>
+        <div class="lv lv4"><img src="/assets/badge-level-3.svg" alt="" width="28" height="28"><span data-i18n="level.3">Level 3 · Documents verified</span></div>
+      </div>
+      <ul class="hc-marks">
+        <li><button type="button" class="bdg" aria-describedby="tip1" data-level="1"><img src="/assets/badge-level-1.svg" alt="" width="22" height="22"><span data-i18n="hero.m1">Structured interview, 14 criteria</span><span class="tip" id="tip1" role="tooltip"><b data-i18n="proof.what">What was checked</b><span data-i18n="hero.m1_tip">ITSM and HR modules, scripting, two client projects, English C1. Report with proof for each criterion.</span><span class="tm" data-i18n="hero.m1_by">By a ServiceNow recruiter · 5 Nov 2026</span></span></button></li>
+        <li><button type="button" class="bdg" aria-describedby="tip2" data-level="2"><img src="/assets/badge-level-2.svg" alt="" width="22" height="22"><span data-i18n="hero.m2">Identity and exchange confirmed</span><span class="tip" id="tip2" role="tooltip"><b data-i18n="proof.what">What was checked</b><span data-i18n="hero.m2_tip">Identity document seen, video exchange with the Verifika team, French C1.</span><span class="tm" data-i18n="hero.m2_by">By the Verifika team · 7 Nov 2026</span></span></button></li>
+        <li><button type="button" class="bdg" aria-describedby="tip3" data-level="3"><img src="/assets/badge-level-3.svg" alt="" width="22" height="22"><span data-i18n="hero.m3">Certification checked at the source</span><span class="tip" id="tip3" role="tooltip"><b data-i18n="proof.what">What was checked</b><span data-i18n="hero.m3_tip">ServiceNow Certified Application Developer, confirmed with the issuer.</span><span class="tm" data-i18n="hero.m3_by">By the Verifika team · 12 Nov 2026</span></span></button></li>
+      </ul>
+      <span class="small muted" data-i18n="hero.hint">Hover or tap a mark to see the proof.</span>
+    </aside>
+  </section>
+
+  <section class="band" aria-labelledby="domains-title">
+    <div class="w band-in">
+      <span class="band-title" id="domains-title" data-i18n="domains.title">Consultants and experts in</span>
+      <span class="domains" id="domains"><span class="chip">SAP</span><span class="chip">Oracle</span><span class="chip">Odoo</span><span class="chip">ServiceNow</span><span class="chip">Salesforce</span><span class="chip">Finance</span><span class="chip">Software development</span><span class="chip">Data and cloud</span><span class="chip">Infrastructure and security</span><span class="chip">Project and change management</span></span>
+    </div>
+  </section>
+
+  <section id="journey" class="journey">
+    <div class="pin">
+      <div class="w journey-in">
+        <div class="journey-card">
+          <div class="bignum" aria-hidden="true"><span class="bn bn1 x1">0</span><span class="bn bn2 x2">1</span><span class="bn bn3 x3">2</span><span class="bn bn4 x4">3</span></div>
+          <div class="storycard">
+            <div class="hc-who">
+              <img src="/assets/verifika-symbol.svg" alt="" width="46" height="46">
+              <div class="hc-id">
+                <span class="hc-name blur">Amina Kariuki</span>
+                <span class="mono muted" data-i18n="story.meta">P-0217 · Odoo functional consultant · 6 years</span>
+              </div>
+            </div>
+            <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot d2"></span><span class="dot d3"></span><span class="dot d4"></span><span class="track"><span class="bar"></span></span></div>
+            <div class="card-states">
+              <div class="cs cs1 x1"><div class="cs-h"><img src="/assets/badge-level-0.svg" alt="" width="30" height="30"><b data-i18n="level.0">Level 0 · Declared</b></div><span class="muted" data-i18n="story.c1">Odoo 17, accounting, inventory · French and English · Available now</span></div>
+              <div class="cs cs2 x2"><div class="cs-h"><img src="/assets/badge-level-1.svg" alt="" width="30" height="30"><b data-i18n="level.1">Level 1 · Recruiter interview</b></div><span class="muted" data-i18n="story.c2">45-minute structured interview · 12 criteria, report with proof · 5 Nov</span></div>
+              <div class="cs cs3 x3"><div class="cs-h"><img src="/assets/badge-level-2.svg" alt="" width="30" height="30"><b data-i18n="level.2">Level 2 · Validated by Verifika</b></div><span class="muted" data-i18n="story.c3">Identity, confirmed exchange, French C2 · 7 Nov</span></div>
+              <div class="cs cs4 x4"><div class="cs-h"><img src="/assets/badge-level-3.svg" alt="" width="30" height="30"><b data-i18n="story.c4_h">Signed with a distributor in Belgium</b></div><span class="muted" data-i18n="story.c4">Anonymous until the interview, first name for the call, full identity at signature · 14 Nov</span></div>
+            </div>
+            <span class="small strong muted" data-i18n="fictitious">Fictitious example</span>
+          </div>
+        </div>
+        <div class="journey-text">
+          <span class="eb"><span class="mk"></span><span data-i18n="story.eyebrow">The journey of a verified profile</span></span>
+          <div class="story-steps">
+            <div class="st x1"><span class="who" data-i18n="story.s1_who">The professional</span><h2 class="h2" data-i18n="story.s1_t">She creates her free profile.</h2><p class="lead" data-i18n="story.s1_p">Ten minutes from her phone. Visible only to our team, until she says yes to a position.</p></div>
+            <div class="st x2"><span class="who accent" data-i18n="story.s2_who">A Verifika recruiter</span><h2 class="h2" data-i18n="story.s2_t">A specialist interviews her.</h2><p class="lead" data-i18n="story.s2_p">One method, one report, criterion by criterion. Her profile earns its first mark.</p></div>
+            <div class="st x3"><span class="who accent" data-i18n="story.s3_who">The Verifika team</span><h2 class="h2" data-i18n="story.s3_t">Our team validates.</h2><p class="lead" data-i18n="story.s3_p">Identity, a confirmed exchange and her languages. The level and the date are on her profile.</p></div>
+            <div class="st x4"><span class="who brass" data-i18n="story.s4_who">The company</span><h2 class="h2" data-i18n="story.s4_t">They meet. Her name appears.</h2><p class="lead" data-i18n="story.s4_p">The company saw the proof, not her name. Her first name for the interview, her full identity at signature.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="w progress" aria-hidden="true">
+        <div><span class="pg"><span class="g g1"></span></span><span data-i18n="story.p1">Profile</span></div>
+        <div><span class="pg"><span class="g g2"></span></span><span data-i18n="story.p2">Recruiter interview</span></div>
+        <div><span class="pg"><span class="g g3"></span></span><span data-i18n="story.p3">Validation</span></div>
+        <div><span class="pg"><span class="g g4 g-brass"></span></span><span data-i18n="story.p4">Signature</span></div>
+      </div>
+    </div>
+    <span class="story-end" aria-hidden="true"></span>
+  </section>
+
+  <section id="companies" class="w split sec">
+    <div class="col">
+      <span class="eb"><span class="mk"></span><span data-i18n="co.eyebrow">For companies</span></span>
+      <h2 class="h2 rv" data-i18n="co.title">Interview fewer people. Hire the right one.</h2>
+      <p class="lead rv"><span data-i18n="co.lead">Tell us the role. You receive a short list of anonymised profiles, each with its proof. No pile of CVs to sort.</span> <span data-cfg-text="promise">First profiles within 2 working days for the roles we cover.</span></p>
+      <div class="actions">
+        <a href="/app/?page=join&amp;kind=company&amp;type=direct_client" data-portal="join" class="btn btn-p" data-cta="company:companies"><span data-i18n="co.cta">Publish a need</span><span class="ar" aria-hidden="true">→</span></a>
+        <a href="#" class="ul" data-cfg-href="bookings_url" data-booking="company" hidden data-i18n="co.call">Or book a 20-minute call</a>
+      </div>
+      <p class="small muted" data-i18n="co.note">Publishing a need is free. Our team reviews your first need with you before the search starts.</p>
+    </div>
+    <div class="col grid-cards">
+      <div class="card spot"><h3 data-i18n="co.k1_t">Freelance or permanent</h3><p data-i18n="co.k1">Missions from a few weeks, or a hire on your payroll.</p></div>
+      <div class="card spot"><h3 data-i18n="co.k2_t">On site, hybrid or remote</h3><p data-i18n="co.k2">Consultants in Europe for your offices; verified remote professionals for remote roles.</p></div>
+      <div class="card spot"><h3 data-i18n="co.k3_t">One supplier</h3><p data-i18n="co.k3">One contract, one invoice, every mission followed until its end.</p></div>
+      <div class="card spot"><h3 data-i18n="co.k4_t">You pay on results</h3><p data-i18n="co.k4">Only when a mission starts or a hire is made. Publishing a need is free.</p></div>
+    </div>
+  </section>
+
+  <section id="agencies" class="agencies">
+    <div class="agency-bg" aria-hidden="true"></div>
+    <div class="w split sec-lg">
+      <div class="col">
+        <span class="eb eb-dark"><span class="mk"></span><span data-i18n="ag.eyebrow">For agencies and recruiters</span></span>
+        <h2 class="h2 ag-h" data-i18n="ag.title">More verified candidates. Your client stays yours.</h2>
+        <p class="lead ag-p" data-i18n="ag.lead">A hard role, a short deadline? Add our verified professionals to your search. You keep the client relationship; we never contact your client.</p>
+        <div class="actions"><a href="/app/?page=join&amp;kind=company&amp;type=agency" data-portal="join" class="btn btn-w" data-cta="agency:agencies"><span data-i18n="ag.cta">Talk to us about a partnership</span><span class="ar" aria-hidden="true">→</span></a></div>
+      </div>
+      <ul class="col ag-list">
+        <li class="ag-li" data-i18n="ag.l1">The name of your end client stays confidential, even from our recruiters.</li>
+        <li class="ag-li" data-i18n="ag.l2">A professional is presented to your end client only once, through you.</li>
+        <li class="ag-li" data-i18n="ag.l3">Profiles already interviewed and checked: you present faster, with the report.</li>
+        <li class="ag-li" data-i18n="ag.l4">One workspace for your team: needs, feedback, interviews.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="professionals" class="w sec stack-lg">
+    <div class="stack">
+      <span class="eb"><span class="mk"></span><span data-i18n="pro.eyebrow">For professionals, in Europe and Africa</span></span>
+      <h2 class="h2 rv" data-i18n="pro.title">Get verified once. Be seen by the right companies.</h2>
+      <p class="lead rv" data-i18n="pro.lead">Free, always. Never shown to a company without your yes for that exact position.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Your situation" data-i18n-attr="aria-label:pro.tabs">
+      <button type="button" role="tab" id="tab-free" aria-controls="panel-free" aria-selected="true" data-tab="free" data-i18n="pro.tab_free">I am a freelance consultant</button>
+      <button type="button" role="tab" id="tab-job" aria-controls="panel-job" aria-selected="false" tabindex="-1" data-tab="job" data-i18n="pro.tab_job">I am looking for a job</button>
+    </div>
+    <div class="pro-grid">
+      <div class="panels">
+        <div class="grid-cards panel" id="panel-free" role="tabpanel" aria-labelledby="tab-free">
+          <div class="card spot"><h3 data-i18n="pro.f1_t">Missions that match</h3><p data-i18n="pro.f1">In the domains we cover. On site in Europe, or remote from wherever you work.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.f2_t">Your rate, no fee for you</h3><p data-i18n="pro.f2">You set your rate. You never pay anything to Verifika Pro.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.f3_t">Paperwork in one place</h3><p data-i18n="pro.f3">Contract, timesheets, invoices and payment dates in your Verifika Pass, your verified profile and workspace.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.f4_t">Feedback with reasons</h3><p data-i18n="pro.f4">After each presentation you see the step reached and why, in plain words.</p></div>
+        </div>
+        <div class="grid-cards panel" id="panel-job" role="tabpanel" aria-labelledby="tab-job" hidden>
+          <div class="card spot"><h3 data-i18n="pro.j1_t">Jobs, not job boards</h3><p data-i18n="pro.j1">Permanent roles at companies that receive few, checked profiles. Yours is one of them.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.j2_t">Anonymous until you say yes</h3><p data-i18n="pro.j2">Your current employer never finds you. Your name is shared only for the interview.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.j3_t">One recruiter who knows you</h3><p data-i18n="pro.j3">A specialised recruiter interviews you once and presents you with a full report.</p></div>
+          <div class="card spot"><h3 data-i18n="pro.f4_t">Feedback with reasons</h3><p data-i18n="pro.f4">After each presentation you see the step reached and why, in plain words.</p></div>
+        </div>
+      </div>
+      <form class="pass-form" id="pass-form" novalidate data-clarity-mask="true">
+        <span class="strong" data-i18n="pro.form_title">Start your Verifika Pass</span>
+        <div class="field">
+          <label for="pemail" data-i18n="pro.email">Your e-mail</label>
+          <div class="input-wrap">
+            <input id="pemail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" aria-describedby="pemail-help" data-clarity-mask="true">
+            <svg class="valid-mark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M5 12l4 4 10-10"></path></svg>
+          </div>
+          <span class="small muted" id="pemail-help" data-i18n="pro.email_help">We send you a code to confirm it. No password.</span>
+        </div>
+        <button type="submit" class="btn btn-p" id="pass-submit"><span id="pass-label" data-i18n="pro.btn_empty">Enter your e-mail to start</span><span class="ar" aria-hidden="true">→</span></button>
+        <div class="next-marks">
+          <span class="small strong muted" data-i18n="pro.next">Your next marks</span>
+          <span class="nm"><img src="/assets/badge-level-0.svg" alt="" width="20" height="20"><span data-i18n="pro.n1">Complete your profile · 10 minutes</span></span>
+          <span class="nm"><img src="/assets/badge-level-1.svg" alt="" width="20" height="20"><span data-i18n="pro.n2">Book your recruiter interview</span></span>
+          <span class="nm muted"><img src="/assets/badge-level-2.svg" alt="" width="20" height="20"><span data-i18n="pro.n3">Validated by Verifika</span></span>
+        </div>
+        <p class="small muted"><span data-i18n="pro.invite_q">Know a great professional?</span> <button type="button" class="ul linkbtn" id="invite-btn" data-i18n="pro.invite">Invite them</button><span class="small accent" id="invite-done" role="status" aria-live="polite"></span></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="verification" class="surface-sec">
+    <div class="w sec stack-lg">
+      <div class="stack">
+        <span class="eb"><span class="mk"></span><span data-i18n="ver.eyebrow">How we verify</span></span>
+        <h2 class="h2 rv" data-i18n="ver.title">A hallmark, not a score.</h2>
+        <p class="lead rv" data-i18n="ver.lead">Like the mark an assay office strikes on precious metal, each badge says what was checked and when. It never ranks people.</p>
+      </div>
+      <div class="grid-levels">
+        <div class="card"><button type="button" class="bdg" aria-describedby="l0" data-level="0"><img src="/assets/badge-level-0.svg" alt="" width="36" height="36"><span class="sr" data-i18n="ver.show">Show the proof</span><span class="tip" id="l0" role="tooltip"><b data-i18n="ver.l0_b">Level 0</b><span data-i18n="ver.l0_tip">Information given by the professional. Shown to companies only after a recruiter interview.</span></span></button><h3 data-i18n="level.0">Level 0 · Declared</h3><p data-i18n="ver.l0">What the professional states in the profile and CV.</p><a class="ul small" href="#professionals" data-i18n="ver.l0_a">Create your profile</a></div>
+        <div class="card"><button type="button" class="bdg" aria-describedby="l1" data-level="1"><img src="/assets/badge-level-1.svg" alt="" width="36" height="36"><span class="sr" data-i18n="ver.show">Show the proof</span><span class="tip" id="l1" role="tooltip"><b data-i18n="ver.l1_b">Level 1</b><span data-i18n="ver.l1_tip">45-minute structured interview by a recruiter of the field, report criterion by criterion.</span></span></button><h3 data-i18n="level.1">Level 1 · Recruiter interview</h3><p data-i18n="ver.l1">A structured interview with a specialised recruiter, full report.</p><a class="ul small" href="#professionals" data-i18n="ver.l1_a">Book your interview</a></div>
+        <div class="card"><button type="button" class="bdg" aria-describedby="l2" data-level="2"><img src="/assets/badge-level-2.svg" alt="" width="36" height="36"><span class="sr" data-i18n="ver.show">Show the proof</span><span class="tip" id="l2" role="tooltip"><b data-i18n="ver.l2_b">Level 2</b><span data-i18n="ver.l2_tip">Identity, a confirmed exchange and languages, checked by the Verifika team.</span></span></button><h3 data-i18n="level.2">Level 2 · Validated by Verifika</h3><p data-i18n="ver.l2">Identity, a confirmed exchange and languages, checked by our team.</p><span class="small muted" data-i18n="ver.l2_a">After your interview</span></div>
+        <div class="card"><button type="button" class="bdg" aria-describedby="l3" data-level="3"><img src="/assets/badge-level-3.svg" alt="" width="36" height="36"><span class="sr" data-i18n="ver.show">Show the proof</span><span class="tip" id="l3" role="tooltip"><b data-i18n="ver.l3_b">Level 3</b><span data-i18n="ver.l3_tip">Diplomas, certifications or licences confirmed with the issuer.</span></span></button><h3 data-i18n="level.3">Level 3 · Documents verified</h3><p data-i18n="ver.l3">Diplomas, certifications or licences checked at the source.</p><span class="small muted" data-i18n="ver.l3_a">Upload your documents in your Pass</span></div>
       </div>
     </div>
   </section>
 
-  <section class="band compare">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow" data-i18n="why.eyebrow">Why Verifika Pro</span>
-        <h2 data-i18n="why.title">We sell evidence, not volume.</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="card"><h3 data-i18n="why.m.title">Freelance marketplaces</h3><p class="muted" data-i18n="why.m.text">sell volume: hundreds of self-declared profiles, for you to sort and check.</p></div>
-        <div class="card"><h3 data-i18n="why.a.title">Traditional agencies</h3><p class="muted" data-i18n="why.a.text">sell their address book: you rarely see what was checked, or how.</p></div>
-        <div class="card is-us"><h3 data-i18n="why.v.title">Verifika Pro</h3><p data-i18n="why.v.text">sells evidence: what was checked, by whom, when and at which level, shown on every profile.</p></div>
-      </div>
+  <section id="recruiters" class="w split sec">
+    <div class="col">
+      <span class="eb"><span class="mk"></span><span data-i18n="rec.eyebrow">Recruit with us</span></span>
+      <h2 class="h2 rv" data-i18n="rec.title">You know how to spot talent. Work on real needs, from anywhere.</h2>
+      <p class="lead rv" data-i18n="rec.lead">Freelance recruiters in Kenya, Rwanda and Europe interview and verify professionals in their speciality, for open positions at European companies.</p>
+      <div class="actions"><a href="/app/?page=apply" data-portal="apply" class="btn btn-s" data-cta="recruiter:recruiters"><span data-i18n="rec.cta">Read the role and apply</span><span class="ar" aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="col grid-cards">
+      <div class="card spot"><h3 data-i18n="rec.k1_t">Profiles waiting for you</h3><p data-i18n="rec.k1">New sign-ups in your speciality, ready for an interview.</p></div>
+      <div class="card spot"><h3 data-i18n="rec.k2_t">Real open positions</h3><p data-i18n="rec.k2">Needs reviewed by our team, with clear criteria.</p></div>
+      <div class="card spot"><h3 data-i18n="rec.k3_t">One method</h3><p data-i18n="rec.k3">A structured interview and one report format, with training.</p></div>
+      <div class="card spot"><h3 data-i18n="rec.k4_t">Paid on results</h3><p data-i18n="rec.k4">Terms explained in the role description.</p></div>
     </div>
   </section>
 
-  <section id="how">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
-        <h2 data-i18n="how.title">From the need to the signature, every step is traced.</h2>
+  <section class="surface-sec">
+    <div class="w sec stack-lg">
+      <span class="eb"><span class="mk"></span><span data-i18n="why.eyebrow">Why Verifika Pro</span></span>
+      <h2 class="h2 rv" data-i18n="why.title">We sell evidence, not volume.</h2>
+      <div class="grid-why">
+        <div class="card"><h3 data-i18n="why.m_t">Freelance marketplaces</h3><p data-i18n="why.m">sell volume: hundreds of self-declared profiles, for you to sort and check.</p></div>
+        <div class="card"><h3 data-i18n="why.a_t">Traditional agencies</h3><p data-i18n="why.a">sell their address book: you rarely see what was checked, or how.</p></div>
+        <div class="card card-accent"><h3>Verifika Pro</h3><p data-i18n="why.v">sells evidence: what was checked, by whom, when and at which level, on every profile.</p></div>
       </div>
-      <ol class="steps">
-        <li><div class="card"><h3 data-i18n="how.s1.title">You publish a need</h3><p class="muted" data-i18n="how.s1.text">Position, mandatory criteria, budget. Our team reviews it with you and may propose a clearer version.</p></div></li>
-        <li><div class="card"><h3 data-i18n="how.s2.title">Specialised recruiters search</h3><p class="muted" data-i18n="how.s2.text">Our network of recruiters finds profiles and runs a structured interview, with a full report criterion by criterion.</p></div></li>
-        <li><div class="card"><h3 data-i18n="how.s3.title">The Verifika team validates</h3><p class="muted" data-i18n="how.s3.text">A second qualification: identity, confirmed exchange, languages. The verification level reached is shown.</p></div></li>
-        <li><div class="card"><h3 data-i18n="how.s4.title">You receive anonymised profiles</h3><p class="muted" data-i18n="how.s4.text">With their evidence. The professional agreed to be presented for this exact position. Your feedback is expected on each profile.</p></div></li>
-        <li><div class="card"><h3 data-i18n="how.s5.title">Interview</h3><p class="muted" data-i18n="how.s5.text">You request an interview and accept the non-solicitation clause. The first name is shared for the call.</p></div></li>
-        <li><div class="card"><h3 data-i18n="how.s6.title">Signature and follow-up</h3><p class="muted" data-i18n="how.s6.text">The full identity is shared at signature. We follow the mission or the guarantee period with you.</p></div></li>
-      </ol>
+      <p class="ai-note"><b data-i18n="why.ai_b">The AI proposes; people decide.</b> <span data-i18n="why.ai">AI helps us read CVs and needs and points out what to check. It never rejects a profile, never ranks people and never analyses voice, face or emotions.</span></p>
     </div>
   </section>
 
-  <section id="levels" class="band levels">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow" data-i18n="levels.eyebrow">Verification levels</span>
-        <h2 data-i18n="levels.title">A hallmark, not a score.</h2>
-        <p class="muted" data-i18n="levels.intro">Like the hallmark of an assay office on precious metal, each badge says what was checked and when. It is never a score or a ranking.</p>
-      </div>
-      <div class="grid grid-4">
-        <div class="card"><img src="assets/badge-level-0.svg" alt="" width="56" height="56"><h3 data-i18n="levels.l0.title">Level 0 · Declared</h3><p class="muted" data-i18n="levels.l0.text">Information given by the professional or their CV.</p></div>
-        <div class="card"><img src="assets/badge-level-1.svg" alt="" width="56" height="56"><h3 data-i18n="levels.l1.title">Level 1 · Recruiter interview</h3><p class="muted" data-i18n="levels.l1.text">Pre-qualification by a specialised recruiter, full report.</p></div>
-        <div class="card"><img src="assets/badge-level-2.svg" alt="" width="56" height="56"><h3 data-i18n="levels.l2.title">Level 2 · Validated by Verifika</h3><p class="muted" data-i18n="levels.l2.text">Second qualification by the Verifika team: identity, confirmed exchange, language.</p></div>
-        <div class="card"><img src="assets/badge-level-3.svg" alt="" width="56" height="56"><h3 data-i18n="levels.l3.title">Level 3 · Documents verified</h3><p class="muted" data-i18n="levels.l3.text">Diplomas, certifications or licences checked at the source.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid grid-2">
-      <article id="companies" class="card card-lg audience">
-        <span class="eyebrow" data-i18n="co.eyebrow">Verifika Proof · for companies</span>
-        <h2 data-i18n="co.title">Hire with less risk.</h2>
-        <ul class="ticks">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="co.t1">Publish your needs with no commitment; you pay when a mission starts or a hire is made.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="co.t2">Freelance or permanent, in Europe and Africa.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="co.t3">Anonymised profiles with their evidence, never a pile of CVs.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="co.t4">One workspace for your whole team: needs, feedback, interviews, messages with our team.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="co.t5">Direct company, agency or independent recruiter: the end client of each need stays confidential.</span></li>
-        </ul>
-        <div class="btn-row"><a class="btn btn-primary" href="app/?page=join&amp;kind=company" data-i18n="co.cta">Create a company account</a></div>
-      </article>
-      <article id="professionals" class="card card-lg audience">
-        <span class="eyebrow" data-i18n="pro.eyebrow">Verifika Pass · for professionals</span>
-        <h2 data-i18n="pro.title">A verified profile that works for you.</h2>
-        <ul class="ticks">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="pro.t1">Free for candidates and consultants.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="pro.t2">Never presented to a company for a position without your agreement for that position.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="pro.t3">Your identity is shared step by step: anonymous profile, first name for the interview, full identity at signature.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="pro.t4">You follow every step of your applications and talk with your recruiter.</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="pro.t5">Your data is yours: download it or ask for deletion from your Pass.</span></li>
-        </ul>
-        <div class="btn-row"><a class="btn btn-primary" href="app/?page=join&amp;kind=person" data-i18n="pro.cta">Create my Verifika Pass</a></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap grid grid-2">
-      <div class="card">
-        <span class="eyebrow" data-i18n="ai.eyebrow">Artificial intelligence</span>
-        <h3 data-i18n="ai.title">The AI proposes; people decide.</h3>
-        <p class="muted" data-i18n="ai.text">AI helps us read CVs and needs and points out what a person should check. It never rejects a profile, never ranks people automatically and never analyses voice, face or emotions.</p>
-      </div>
-      <div class="card">
-        <span class="eyebrow" data-i18n="rec.eyebrow">Recruiters</span>
-        <h3 data-i18n="rec.title">Are you a recruiter?</h3>
-        <p class="muted" data-i18n="rec.text">Company recruiters are invited by the company they work for. Freelance recruiters can apply to join our network: read the role and send your application with your CV.</p>
-        <div class="btn-row"><a class="btn btn-primary" href="app/?page=apply" data-i18n="rec.cta">Become a Verifika recruiter</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="faq">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow" data-i18n="faq.eyebrow">Frequently asked questions</span><h2 data-i18n="faq.title">What people often ask us</h2></div>
-      <details><summary data-i18n="faq.q1">How much does Verifika Pro cost?</summary><p data-i18n="faq.a1">For professionals, nothing. For companies, publishing a need comes with no commitment: you pay when a mission starts (freelance) or a hire is made (permanent), under the terms agreed for each need.</p></details>
-      <details><summary data-i18n="faq.q2">What exactly do you check?</summary><p data-i18n="faq.a2">Depending on the level: a structured interview with a report criterion by criterion, a second qualification by our team (identity, exchange, languages), then diplomas or certifications checked at the source. The level and the date of the last check are shown.</p></details>
-      <details><summary data-i18n="faq.q3">Why are profiles anonymised?</summary><p data-i18n="faq.a3">To protect professionals and keep the choice on skills. The first name is given for the interview, the full identity at signature.</p></details>
-      <details><summary data-i18n="faq.q4">I am an agency or an independent recruiter: can I use Verifika Pro?</summary><p data-i18n="faq.a4">Yes. You name the end client of each need; we keep it confidential and present a professional only once per end client.</p></details>
-      <details><summary data-i18n="faq.q5">How is my data protected?</summary><p data-i18n="faq.a5">Sign-in with single-use codes, access limited by role, every action logged, data kept for a limited time. You can download your data or ask for deletion at any time.</p></details>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="wrap section-head" style="margin-bottom:0">
-      <h2 data-i18n="cta.title">Ready to work with verified profiles?</h2>
-      <p data-i18n="cta.text">Create your account in two minutes. It is active as soon as you confirm your e-mail address.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary btn-lg" href="app/?page=join&amp;kind=company" data-i18n="hero.cta_company">I am hiring</a>
-        <a class="btn btn-lg" href="app/?page=join&amp;kind=person" data-i18n="hero.cta_person">I am a candidate or a consultant</a>
-      </div>
+  <section id="faq" class="w sec stack-lg">
+    <span class="eb"><span class="mk"></span><span data-i18n="faq.eyebrow">Questions</span></span>
+    <h2 class="h2 rv" data-i18n="faq.title">What people ask us</h2>
+    <div class="grid-faq">
+      <details class="card faq" data-faq="cost" open><summary data-i18n="faq.q1">How much does it cost?</summary><p data-i18n="faq.a1">Nothing for professionals. For companies, publishing a need is free; you pay when a mission starts or a hire is made.</p></details>
+      <details class="card faq" data-faq="speed"><summary data-i18n="faq.q2">How fast do I receive profiles?</summary><p><span data-cfg-text="promise">First profiles within 2 working days for the roles we cover.</span> <span data-i18n="faq.a2">Your feedback on each profile makes the next ones fit better.</span></p></details>
+      <details class="card faq" data-faq="africa"><summary data-i18n="faq.q3">I am a freelancer in Africa. Can I work for European companies?</summary><p data-i18n="faq.a3">Yes, for remote roles that match your time zone and languages. Verification is what makes the difference.</p></details>
+      <details class="card faq" data-faq="verification_time"><summary data-i18n="faq.q4">How long does verification take?</summary><p data-i18n="faq.a4">Profiles that match open positions are interviewed first; others as soon as a recruiter of the field is available.</p></details>
+      <details class="card faq" data-faq="agency_client"><summary data-i18n="faq.q5">I am an agency. Will you contact my client?</summary><p data-i18n="faq.a5">Never. Your end client stays confidential, and a professional is presented to it only once, through you.</p></details>
+      <details class="card faq" data-faq="data"><summary data-i18n="faq.q6">How is my data protected?</summary><p data-i18n="faq.a6">Single-use sign-in codes, access by role, every action logged. Download your data or ask for deletion at any time.</p></details>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <span data-i18n="foot.operator">Verifika Pro is operated by Nexa Consulting.</span>
-    <nav aria-label="Links">
-      <a href="legal.html" data-i18n="foot.legal">Legal notice and privacy</a>
-      <a href="mailto:verifika@nexa-consult.com" data-i18n="foot.contact">Contact</a>
-      <a href="app/" data-i18n="nav.login">Sign in</a>
-    </nav>
+<section class="closing">
+  <div class="w closing-in">
+    <h2 class="h2 on-ink" data-i18n="end.title">Hire with proof. Get hired for what you can prove.</h2>
+    <div class="actions">
+      <a href="#companies" class="btn btn-w" data-cta="company:closing"><span data-i18n="end.hire">I am hiring</span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="#professionals" class="btn btn-o" data-cta="professional:closing"><span data-i18n="end.profile">Create my free profile</span><span class="ar" aria-hidden="true">→</span></a>
+    </div>
   </div>
-</footer>
-<script src="assets/site.js"></script>
+    <footer class="w site-foot">
+    <img class="foot-logo" src="/assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="112" height="24">
+    <span class="foot-copy">© 2026 Verifika Pro</span>
+    <a class="foot-link" href="#" data-cfg-href="linkedin_url" hidden aria-label="Verifika Pro on LinkedIn" data-i18n-attr="aria-label:foot.linkedin_label"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm3 7v8h2.5v-8zm1.25-4a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8zM11 10v8h2.5v-4.2c0-1.1.6-1.8 1.5-1.8s1.3.6 1.3 1.8V18H19v-4.7c0-2.3-1.2-3.5-3-3.5-1.1 0-1.9.5-2.4 1.2V10z"></path></svg>LinkedIn</a>
+    <a class="ul foot-link" href="legal.html" data-i18n="foot.legal">Legal notice</a>
+    <a class="ul foot-link" href="privacy.html" data-i18n="foot.privacy">Privacy policy</a>
+    <a class="ul foot-link" href="cookies.html" data-i18n="foot.cookies">Cookie policy</a>
+    <button type="button" class="ul foot-link linkbtn" data-cookie-settings data-i18n="foot.cookie_settings">Cookie settings</button>
+    <a class="ul foot-link" href="mailto:verifika@nexa-consult.com" data-cfg-mail="entity_email" data-i18n="foot.contact">Contact</a>
+    <a class="ul foot-link" href="/fr/" hreflang="fr" lang="fr" data-lang-switch data-i18n="foot.lang">Français</a>
+  </footer>
+
+</section>
+<div class="ck-banner" id="ck-banner" role="region" aria-label="Cookies" data-i18n-attr="aria-label:ck.region" hidden>
+  <div class="ck-box">
+    <p class="ck-text"><b data-i18n="ck.title">Cookies, briefly.</b> <span data-i18n="ck.text">We use what the site needs to work (your language, your sign-in). With your agreement, we also measure visits to improve the site, with Google Analytics and Microsoft Clarity.</span> <a class="ul" href="cookies.html" data-i18n="ck.policy">Cookie policy</a></p>
+    <div class="ck-actions">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject">Reject</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="choose" data-i18n="ck.choose">Choose</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="accept" data-i18n="ck.accept">Accept</button>
+    </div>
+  </div>
+</div>
+<div class="ck-modal" id="ck-modal" hidden>
+  <div class="ck-dialog" role="dialog" aria-modal="true" aria-labelledby="ck-title">
+    <div class="ck-head"><h2 id="ck-title" data-i18n="ck.settings">Cookie settings</h2><button type="button" class="ck-close" data-ck="close" aria-label="Close" data-i18n-attr="aria-label:ck.close">×</button></div>
+    <div class="ck-row ck-needed"><div><b data-i18n="ck.needed">Needed for the site</b><span data-i18n="ck.needed_t">Your language and your sign-in session. Always on.</span></div><span class="ck-on" data-i18n="ck.always">Always on</span></div>
+    <div class="ck-row"><div><b id="ck-ana-l" data-i18n="ck.ana">Audience measurement</b><span data-i18n="ck.ana_t">Google Analytics and Microsoft Clarity: pages visited and buttons used, never what you type. Kept 13 months.</span></div><button type="button" class="sw" role="switch" aria-checked="false" aria-labelledby="ck-ana-l" id="ck-ana"><span></span></button></div>
+    <div class="ck-actions ck-end">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject_all">Reject all</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="save" data-i18n="ck.save">Save my choice</button>
+    </div>
+    <a class="ul small" href="cookies.html" data-i18n="ck.read">Read the cookie policy</a>
+  </div>
+</div>
+
+<script>window.VK_LANG = "en"; window.VK_T = {"js.btn_valid":"Create my free profile","js.btn_sending":"Opening your sign-up…","js.invite_copied":"Link copied. Send it to the person.","js.invite_text":"I think Verifika Pro could interest you: a free verified profile, shown to companies only with your agreement.","js.opening_soon":"Opening soon.","js.app_title":"Verifika Pro"};</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

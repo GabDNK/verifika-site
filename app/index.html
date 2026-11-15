@@ -1,31 +1,102 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <title>Verifika Pro</title>
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon-180.png">
-<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  html, body { margin: 0; height: 100%; background: var(--bg); }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
   iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .soon { padding: var(--sp-7) var(--sp-4); text-align: center; font-family: var(--font-body); color: var(--text); }
 </style>
+<script src="/assets/site-config.js"></script>
 </head>
 <body>
-<!-- The portal (Google Apps Script web app) shown under verifika.pro (D-68). Links from e-mails (?page=login&t=…, ?page=invite…, ?page=pass…,
-     ?page=signup…) and site buttons (?page=join&kind=…) are passed on to the portal; one-time tokens are then removed from the address bar.
-     The portal checks that it is framed by this site only (frameOrigins). -->
-<iframe id="portal" title="Verifika Pro" allow="clipboard-write"></iframe>
-<script src="config.js"></script>
+<!-- The portal (Google Apps Script web app) shown under verifika.pro (D-68). The portal address comes from the site configuration
+     (setting site.portal_url, D-73 C3). Links from e-mails (?page=login&t=…, ?page=invite…, ?page=pass…, ?page=signup…) and site buttons
+     (?page=join&kind=…&type=…) are passed on; one-time tokens and UTM are then removed from the address bar.
+     An e-mail typed on the landing page goes to the sign-up form in the body of a POST request (never in an address, never in a message).
+     Events of the sign-up (no personal data) come back by postMessage, checked in both directions (exact origins). -->
+<iframe id="portal" name="vk-portal" title="Verifika Pro" allow="clipboard-write"></iframe>
+<form id="vk-post" method="post" target="vk-portal" hidden></form>
+<p class="soon" id="soon" hidden data-i18n="js.opening_soon">Opening soon.</p>
 <script>
   (function () {
-    var src = window.VERIFIKA_PORTAL_URL + (location.search || '');
-    document.getElementById('portal').src = src;
-    if (/[?&]t=/.test(location.search) && window.history && history.replaceState) history.replaceState(null, '', location.pathname);
+    'use strict';
+    var C = window.VERIFIKA_SITE || {};
+    var base = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(C.portal_url || '') ? C.portal_url : '';
+    var q = new URLSearchParams(location.search);
+    // French wrapper for the cookie banner (the portal itself chooses its language)
+    if (q.get('lang') === 'fr' && document.documentElement.lang !== 'fr') { location.replace('/fr/app/' + location.search); return; }
+    var page = q.get('page') || '';
+    // measurement only before an account exists (public pages of the portal)
+    if (['join', 'signup', 'apply'].indexOf(page) < 0) window.VK_NO_ANALYTICS = true;
+    var frame = document.getElementById('portal');
+    if (!base) { frame.hidden = true; document.getElementById('soon').hidden = false; return; }
+    var email = null;
+    try { email = sessionStorage.getItem('vk_pass_email'); sessionStorage.removeItem('vk_pass_email'); } catch (e) { email = null; }
+    if (email && page === 'join' && /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/.test(email)) {
+      var f = document.getElementById('vk-post'); f.action = base;
+      q.forEach(function (v, k) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; f.appendChild(i); });
+      var e = document.createElement('input'); e.type = 'hidden'; e.name = 'email'; e.value = email; f.appendChild(e);
+      f.submit();
+    } else {
+      frame.src = base + (location.search || '');
+    }
+    // nothing secret or personal stays in the address bar
+    if (window.history && history.replaceState && /[?&](t|inv|u_f|u_l)=/.test(location.search)) {
+      ['t', 'inv', 'u_f', 'u_l'].forEach(function (k) { q.delete(k); });
+      history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q.toString() : ''));
+    }
+    // postMessage from the portal (D-73 C5): exact origin of the Apps Script frame, and the sender must be the frame inside OUR iframe
+    var ORIGIN_RE = /^https:\/\/n-[a-z0-9]+-[0-9a-z]+-script\.googleusercontent\.com$/;
+    var EVENTS = { sign_up_start: 1, sign_up_complete: 1, access_request: 1, partnership_request: 1, recruiter_apply: 1 };
+    var VALUES = /^(professional|company|agency|recruiter|freelance|job_seeker|direct_client|independent_recruiter)$/;
+    var done = false;
+    window.addEventListener('message', function (ev) {
+      var okOrigin = C.frame_origin ? ev.origin === C.frame_origin : ORIGIN_RE.test(ev.origin);
+      var fromOurFrame = false; try { fromOurFrame = ev.source && ev.source.parent === frame.contentWindow; } catch (x) { fromOurFrame = false; }
+      if (!okOrigin || !fromOurFrame) return;
+      var d = ev.data || {};
+      if (d.type === 'vk-hello') { ev.source.postMessage({ type: 'vk-ready' }, ev.origin); return; }
+      if (d.type !== 'vk-event' || !EVENTS[d.name] || done) return;
+      var p = {};
+      ['audience', 'kind'].forEach(function (k) { if (d.params && VALUES.test(String(d.params[k] || ''))) p[k] = d.params[k]; });
+      if (window.vkTrack) window.vkTrack(d.name, p);
+      if (d.name === 'sign_up_complete') done = true; // the account exists: no more measurement
+    });
   })();
 </script>
+<div class="ck-banner" id="ck-banner" role="region" aria-label="Cookies" data-i18n-attr="aria-label:ck.region" hidden>
+  <div class="ck-box">
+    <p class="ck-text"><b data-i18n="ck.title">Cookies, briefly.</b> <span data-i18n="ck.text">We use what the site needs to work (your language, your sign-in). With your agreement, we also measure visits to improve the site, with Google Analytics and Microsoft Clarity.</span> <a class="ul" href="/cookies.html" data-i18n="ck.policy">Cookie policy</a></p>
+    <div class="ck-actions">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject">Reject</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="choose" data-i18n="ck.choose">Choose</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="accept" data-i18n="ck.accept">Accept</button>
+    </div>
+  </div>
+</div>
+<div class="ck-modal" id="ck-modal" hidden>
+  <div class="ck-dialog" role="dialog" aria-modal="true" aria-labelledby="ck-title">
+    <div class="ck-head"><h2 id="ck-title" data-i18n="ck.settings">Cookie settings</h2><button type="button" class="ck-close" data-ck="close" aria-label="Close" data-i18n-attr="aria-label:ck.close">×</button></div>
+    <div class="ck-row ck-needed"><div><b data-i18n="ck.needed">Needed for the site</b><span data-i18n="ck.needed_t">Your language and your sign-in session. Always on.</span></div><span class="ck-on" data-i18n="ck.always">Always on</span></div>
+    <div class="ck-row"><div><b id="ck-ana-l" data-i18n="ck.ana">Audience measurement</b><span data-i18n="ck.ana_t">Google Analytics and Microsoft Clarity: pages visited and buttons used, never what you type. Kept 13 months.</span></div><button type="button" class="sw" role="switch" aria-checked="false" aria-labelledby="ck-ana-l" id="ck-ana"><span></span></button></div>
+    <div class="ck-actions ck-end">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject_all">Reject all</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="save" data-i18n="ck.save">Save my choice</button>
+    </div>
+    <a class="ul small" href="/cookies.html" data-i18n="ck.read">Read the cookie policy</a>
+  </div>
+</div>
+
+<script>window.VK_LANG = "en"; window.VK_T = {"js.btn_valid":"Create my free profile","js.btn_sending":"Opening your sign-up…","js.invite_copied":"Link copied. Send it to the person.","js.invite_text":"I think Verifika Pro could interest you: a free verified profile, shown to companies only with your agreement.","js.opening_soon":"Opening soon.","js.app_title":"Verifika Pro"};</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

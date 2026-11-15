@@ -4,51 +4,87 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Legal notice and privacy – Verifika Pro</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title data-i18n="legal.t_title">Legal notice – Verifika Pro</title>
+<link rel="canonical" href="https://verifika.pro/legal.html">
+<link rel="alternate" hreflang="en" href="https://verifika.pro/legal.html">
+<link rel="alternate" hreflang="fr" href="https://verifika.pro/fr/legal.html">
+<link rel="alternate" hreflang="x-default" href="https://verifika.pro/legal.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap&subset=latin">
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=latin">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site-config.js"></script>
 </head>
-<body>
+<body class="page">
 <header class="top">
-  <div class="wrap top-bar">
+  <div class="w top-bar">
     <a class="brand" href="./" aria-label="Verifika Pro">
-      <img class="logo-light" src="assets/verifika-pro-horizontal.svg" alt="Verifika Pro" width="168" height="36">
-      <img class="logo-dark" src="assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="168" height="36">
+      <img class="logo-light" src="/assets/verifika-pro-horizontal.svg" alt="Verifika Pro" width="140" height="30">
+      <img class="logo-dark" src="/assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="140" height="30">
     </a>
-    <div class="tools"><a class="btn btn-quiet" href="legal-fr.html">FR</a><a class="btn btn-quiet" href="app/">Sign in</a></div>
+    <div class="top-actions"><a class="ul" href="./" data-i18n="legal.home">Home</a></div>
   </div>
 </header>
-<main class="wrap legal" style="padding-top: var(--sp-7); padding-bottom: var(--sp-8);">
-  <h1>Legal notice and privacy</h1>
-  <p class="draft"><strong>Draft – to be validated by a lawyer before the public launch.</strong> Information in square brackets is to be completed.</p>
-
-  <h2>Publisher</h2>
-  <p>Verifika Pro is operated by Nexa Consulting, [legal form], [registered address], Belgium. Company number (BCE): [to complete]. VAT: [to complete].</p>
-  <p>Contact: <a href="mailto:verifika@nexa-consult.com">verifika@nexa-consult.com</a>. Publication manager: [name].</p>
-  <p>Site hosting: GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). The portal is hosted by Google (Google Apps Script); e-mails are sent through Microsoft 365.</p>
-
-  <h2>Personal data</h2>
-  <p>Controller: Nexa Consulting. We collect what your account needs (name, e-mail, language); for companies, the company details and its needs; for professionals, the profile, CV, skills, languages, availability, expected rate or salary, interview notes and verification results. We never record date of birth, nationality, photo, ID numbers or health data.</p>
-  <p>Purposes and legal bases: running your account (contract), verifying and presenting professionals with their agreement (consent and contract), securing the platform (legitimate interest), meeting legal duties (invoices).</p>
-  <p>Artificial intelligence: AI helps read CVs and needs and points out what a person should check. It never decides, never ranks people automatically and never analyses voice, face or emotions.</p>
-  <p>Recipients: our team; companies see anonymised profiles, then a first name for an interview, then the full identity at signature. Our providers (Google, Microsoft, Anthropic) process data on our behalf under contracts with protection clauses, partly outside the European Union.</p>
-  <p>Retention: as long as the account is active, then 24 months after the last contact, except what the law requires us to keep (invoices: 7 years).</p>
-  <p>Your rights: access, correction, deletion, portability, objection and withdrawal of consent, from your account or by e-mail. You may complain to the Belgian Data Protection Authority (dataprotectionauthority.be).</p>
-
-  <h2>Use of the portal</h2>
-  <p>To improve the portal, we measure the screens opened, the time of active use and the buttons used, never what you type. For clients, candidates and independent recruiters these measures are pseudonymous and only read in groups of at least 5 people. For Verifika and Nexa employees, presence in the portal (first and last active moment, active time) is visible to the administrator and kept 90 days. Basis: legitimate interest. Kept: 13 months.</p>
-
-  <h2>Cookies</h2>
-  <p>This site sets no analytics or advertising cookie. It only remembers your language choice in your browser. Fonts are loaded from Google Fonts.</p>
-
-  <h2>Terms of use</h2>
-  <p>The terms of use for companies and for professionals are shown and accepted when the account is created, with their version and date.</p>
-  <p><a href="./">Back to home</a> · <a href="legal-fr.html">Français</a></p>
+<main id="main" class="w legal">
+  <h1 data-i18n="legal.h1">Legal notice</h1>
+  <p class="draft" data-i18n="legal.draft">Draft to be validated by a lawyer before the public launch.</p>
+  <h2 data-i18n="legal.publisher">Publisher</h2>
+  <p data-i18n="legal.trade">Verifika Pro is a trade name of DNK Capitals.</p>
+  <dl class="facts">
+    <div data-cfg-line="entity_name"><dt data-i18n="legal.f_name">Company</dt><dd data-cfg="entity_name"></dd></div>
+    <div data-cfg-line="entity_form"><dt data-i18n="legal.f_form">Legal form</dt><dd data-cfg="entity_form"></dd></div>
+    <div data-cfg-line="entity_address"><dt data-i18n="legal.f_address">Registered address</dt><dd data-cfg="entity_address"></dd></div>
+    <div data-cfg-line="entity_number"><dt data-i18n="legal.f_number">Company number</dt><dd data-cfg="entity_number" class="mono"></dd></div>
+    <div data-cfg-line="entity_vat"><dt data-i18n="legal.f_vat">VAT</dt><dd data-cfg="entity_vat" class="mono"></dd></div>
+    <div data-cfg-line="entity_email"><dt data-i18n="legal.f_email">Contact</dt><dd><a data-cfg-mail="entity_email" data-cfg="entity_email" href="#"></a></dd></div>
+    <div data-cfg-line="entity_publisher"><dt data-i18n="legal.f_publisher">Publication manager</dt><dd data-cfg="entity_publisher"></dd></div>
+    <div data-cfg-line="hosting"><dt data-i18n="legal.f_hosting">Site hosting</dt><dd data-cfg="hosting"></dd></div>
+  </dl>
+  <p data-i18n="legal.portal">The portal runs on Google (Google Apps Script); e-mails are sent through Microsoft 365.</p>
+  <h2 data-i18n="legal.terms_h">Terms of use</h2>
+  <p data-i18n="legal.terms">The terms of use for companies and for professionals are shown and accepted when the account is created, with their version and date.</p>
+  <p><a class="ul" href="privacy.html" data-i18n="foot.privacy">Privacy policy</a> · <a class="ul" href="cookies.html" data-i18n="foot.cookies">Cookie policy</a></p>
 </main>
-<footer><div class="wrap foot"><span>Verifika Pro is operated by Nexa Consulting.</span></div></footer>
+<section class="closing closing-slim">
+    <footer class="w site-foot">
+    <img class="foot-logo" src="/assets/verifika-pro-horizontal-reverse.svg" alt="Verifika Pro" width="112" height="24">
+    <span class="foot-copy">© 2026 Verifika Pro</span>
+    <a class="foot-link" href="#" data-cfg-href="linkedin_url" hidden aria-label="Verifika Pro on LinkedIn" data-i18n-attr="aria-label:foot.linkedin_label"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm3 7v8h2.5v-8zm1.25-4a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8zM11 10v8h2.5v-4.2c0-1.1.6-1.8 1.5-1.8s1.3.6 1.3 1.8V18H19v-4.7c0-2.3-1.2-3.5-3-3.5-1.1 0-1.9.5-2.4 1.2V10z"></path></svg>LinkedIn</a>
+    <a class="ul foot-link" href="legal.html" data-i18n="foot.legal">Legal notice</a>
+    <a class="ul foot-link" href="privacy.html" data-i18n="foot.privacy">Privacy policy</a>
+    <a class="ul foot-link" href="cookies.html" data-i18n="foot.cookies">Cookie policy</a>
+    <button type="button" class="ul foot-link linkbtn" data-cookie-settings data-i18n="foot.cookie_settings">Cookie settings</button>
+    <a class="ul foot-link" href="mailto:verifika@nexa-consult.com" data-cfg-mail="entity_email" data-i18n="foot.contact">Contact</a>
+    <a class="ul foot-link" href="/fr/legal.html" hreflang="fr" lang="fr" data-lang-switch data-i18n="foot.lang">Français</a>
+  </footer>
+
+</section>
+<div class="ck-banner" id="ck-banner" role="region" aria-label="Cookies" data-i18n-attr="aria-label:ck.region" hidden>
+  <div class="ck-box">
+    <p class="ck-text"><b data-i18n="ck.title">Cookies, briefly.</b> <span data-i18n="ck.text">We use what the site needs to work (your language, your sign-in). With your agreement, we also measure visits to improve the site, with Google Analytics and Microsoft Clarity.</span> <a class="ul" href="cookies.html" data-i18n="ck.policy">Cookie policy</a></p>
+    <div class="ck-actions">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject">Reject</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="choose" data-i18n="ck.choose">Choose</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="accept" data-i18n="ck.accept">Accept</button>
+    </div>
+  </div>
+</div>
+<div class="ck-modal" id="ck-modal" hidden>
+  <div class="ck-dialog" role="dialog" aria-modal="true" aria-labelledby="ck-title">
+    <div class="ck-head"><h2 id="ck-title" data-i18n="ck.settings">Cookie settings</h2><button type="button" class="ck-close" data-ck="close" aria-label="Close" data-i18n-attr="aria-label:ck.close">×</button></div>
+    <div class="ck-row ck-needed"><div><b data-i18n="ck.needed">Needed for the site</b><span data-i18n="ck.needed_t">Your language and your sign-in session. Always on.</span></div><span class="ck-on" data-i18n="ck.always">Always on</span></div>
+    <div class="ck-row"><div><b id="ck-ana-l" data-i18n="ck.ana">Audience measurement</b><span data-i18n="ck.ana_t">Google Analytics and Microsoft Clarity: pages visited and buttons used, never what you type. Kept 13 months.</span></div><button type="button" class="sw" role="switch" aria-checked="false" aria-labelledby="ck-ana-l" id="ck-ana"><span></span></button></div>
+    <div class="ck-actions ck-end">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject_all">Reject all</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="save" data-i18n="ck.save">Save my choice</button>
+    </div>
+    <a class="ul small" href="cookies.html" data-i18n="ck.read">Read the cookie policy</a>
+  </div>
+</div>
+
+<script>window.VK_LANG = "en"; window.VK_T = {"js.btn_valid":"Create my free profile","js.btn_sending":"Opening your sign-up…","js.invite_copied":"Link copied. Send it to the person.","js.invite_text":"I think Verifika Pro could interest you: a free verified profile, shown to companies only with your agreement.","js.opening_soon":"Opening soon.","js.app_title":"Verifika Pro"};</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

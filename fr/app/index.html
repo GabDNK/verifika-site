@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Verifika Pro</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .soon { padding: var(--sp-7) var(--sp-4); text-align: center; font-family: var(--font-body); color: var(--text); }
+</style>
+<script src="/assets/site-config.js"></script>
+</head>
+<body>
+<!-- The portal (Google Apps Script web app) shown under verifika.pro (D-68). The portal address comes from the site configuration
+     (setting site.portal_url, D-73 C3). Links from e-mails (?page=login&t=…, ?page=invite…, ?page=pass…, ?page=signup…) and site buttons
+     (?page=join&kind=…&type=…) are passed on; one-time tokens and UTM are then removed from the address bar.
+     An e-mail typed on the landing page goes to the sign-up form in the body of a POST request (never in an address, never in a message).
+     Events of the sign-up (no personal data) come back by postMessage, checked in both directions (exact origins). -->
+<iframe id="portal" name="vk-portal" title="Verifika Pro" allow="clipboard-write"></iframe>
+<form id="vk-post" method="post" target="vk-portal" hidden></form>
+<p class="soon" id="soon" hidden data-i18n="js.opening_soon">Bientôt disponible.</p>
+<script>
+  (function () {
+    'use strict';
+    var C = window.VERIFIKA_SITE || {};
+    var base = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(C.portal_url || '') ? C.portal_url : '';
+    var q = new URLSearchParams(location.search);
+    // French wrapper for the cookie banner (the portal itself chooses its language)
+    if (q.get('lang') === 'fr' && document.documentElement.lang !== 'fr') { location.replace('/fr/app/' + location.search); return; }
+    var page = q.get('page') || '';
+    // measurement only before an account exists (public pages of the portal)
+    if (['join', 'signup', 'apply'].indexOf(page) < 0) window.VK_NO_ANALYTICS = true;
+    var frame = document.getElementById('portal');
+    if (!base) { frame.hidden = true; document.getElementById('soon').hidden = false; return; }
+    var email = null;
+    try { email = sessionStorage.getItem('vk_pass_email'); sessionStorage.removeItem('vk_pass_email'); } catch (e) { email = null; }
+    if (email && page === 'join' && /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/.test(email)) {
+      var f = document.getElementById('vk-post'); f.action = base;
+      q.forEach(function (v, k) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; f.appendChild(i); });
+      var e = document.createElement('input'); e.type = 'hidden'; e.name = 'email'; e.value = email; f.appendChild(e);
+      f.submit();
+    } else {
+      frame.src = base + (location.search || '');
+    }
+    // nothing secret or personal stays in the address bar
+    if (window.history && history.replaceState && /[?&](t|inv|u_f|u_l)=/.test(location.search)) {
+      ['t', 'inv', 'u_f', 'u_l'].forEach(function (k) { q.delete(k); });
+      history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q.toString() : ''));
+    }
+    // postMessage from the portal (D-73 C5): exact origin of the Apps Script frame, and the sender must be the frame inside OUR iframe
+    var ORIGIN_RE = /^https:\/\/n-[a-z0-9]+-[0-9a-z]+-script\.googleusercontent\.com$/;
+    var EVENTS = { sign_up_start: 1, sign_up_complete: 1, access_request: 1, partnership_request: 1, recruiter_apply: 1 };
+    var VALUES = /^(professional|company|agency|recruiter|freelance|job_seeker|direct_client|independent_recruiter)$/;
+    var done = false;
+    window.addEventListener('message', function (ev) {
+      var okOrigin = C.frame_origin ? ev.origin === C.frame_origin : ORIGIN_RE.test(ev.origin);
+      var fromOurFrame = false; try { fromOurFrame = ev.source && ev.source.parent === frame.contentWindow; } catch (x) { fromOurFrame = false; }
+      if (!okOrigin || !fromOurFrame) return;
+      var d = ev.data || {};
+      if (d.type === 'vk-hello') { ev.source.postMessage({ type: 'vk-ready' }, ev.origin); return; }
+      if (d.type !== 'vk-event' || !EVENTS[d.name] || done) return;
+      var p = {};
+      ['audience', 'kind'].forEach(function (k) { if (d.params && VALUES.test(String(d.params[k] || ''))) p[k] = d.params[k]; });
+      if (window.vkTrack) window.vkTrack(d.name, p);
+      if (d.name === 'sign_up_complete') done = true; // the account exists: no more measurement
+    });
+  })();
+</script>
+<div class="ck-banner" id="ck-banner" role="region" aria-label="Cookies" data-i18n-attr="aria-label:ck.region" hidden>
+  <div class="ck-box">
+    <p class="ck-text"><b data-i18n="ck.title">Les cookies, en bref.</b> <span data-i18n="ck.text">Nous utilisons ce dont le site a besoin pour fonctionner (votre langue, votre connexion). Avec votre accord, nous mesurons aussi les visites pour améliorer le site, avec Google Analytics et Microsoft Clarity.</span> <a class="ul" href="/fr/cookies.html" data-i18n="ck.policy">Politique cookies</a></p>
+    <div class="ck-actions">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject">Refuser</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="choose" data-i18n="ck.choose">Choisir</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="accept" data-i18n="ck.accept">Accepter</button>
+    </div>
+  </div>
+</div>
+<div class="ck-modal" id="ck-modal" hidden>
+  <div class="ck-dialog" role="dialog" aria-modal="true" aria-labelledby="ck-title">
+    <div class="ck-head"><h2 id="ck-title" data-i18n="ck.settings">Paramètres des cookies</h2><button type="button" class="ck-close" data-ck="close" aria-label="Fermer" data-i18n-attr="aria-label:ck.close">×</button></div>
+    <div class="ck-row ck-needed"><div><b data-i18n="ck.needed">Nécessaires au site</b><span data-i18n="ck.needed_t">Votre langue et votre session de connexion. Toujours actifs.</span></div><span class="ck-on" data-i18n="ck.always">Toujours actifs</span></div>
+    <div class="ck-row"><div><b id="ck-ana-l" data-i18n="ck.ana">Mesure d’audience</b><span data-i18n="ck.ana_t">Google Analytics et Microsoft Clarity : pages visitées et boutons utilisés, jamais ce que vous saisissez. Conservé 13 mois.</span></div><button type="button" class="sw" role="switch" aria-checked="false" aria-labelledby="ck-ana-l" id="ck-ana"><span></span></button></div>
+    <div class="ck-actions ck-end">
+      <button type="button" class="btn btn-s btn-sm" data-ck="reject" data-i18n="ck.reject_all">Tout refuser</button>
+      <button type="button" class="btn btn-s btn-sm" data-ck="save" data-i18n="ck.save">Enregistrer mon choix</button>
+    </div>
+    <a class="ul small" href="/fr/cookies.html" data-i18n="ck.read">Lire la politique cookies</a>
+  </div>
+</div>
+
+<script>window.VK_LANG = "fr"; window.VK_T = {"js.btn_valid":"Créer mon profil gratuit","js.btn_sending":"Ouverture de votre inscription…","js.invite_copied":"Lien copié. Envoyez-le à la personne.","js.invite_text":"Je pense que Verifika Pro peut t’intéresser : un profil vérifié gratuit, présenté aux entreprises seulement avec ton accord.","js.opening_soon":"Bientôt disponible.","js.app_title":"Verifika Pro"};</script>
+<script src="/assets/site.js"></script>
+</body>
+</html>
