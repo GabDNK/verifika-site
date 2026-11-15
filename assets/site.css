@@ -107,13 +107,15 @@ h1, h2, h3 { text-wrap: balance; }
 .rail a { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: var(--fs-xs); font-weight: 600; color: var(--text-faint); }
 .rail .n { width: 12px; height: 12px; border: 2px solid var(--text-faint); clip-path: polygon(3px 0, 9px 0, 12px 3px, 12px 9px, 9px 12px, 3px 12px, 0 9px, 0 3px); }
 .rail a:hover, .rail a:focus-visible { color: var(--text); }
-@media (max-width: 1280px) { .rail { display: none; } }
+/* only where the margin beside the 1200 px content is wide enough: the rail never overlaps the text */
+@media (max-width: 1479px) { .rail { display: none; } }
 
 /* hero */
 .hero { padding-top: 72px; padding-bottom: 72px; display: flex; flex-wrap: wrap; gap: var(--sp-7); align-items: center; }
 .hero-text { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
 @media (max-width: 600px) { .hero { padding-top: var(--sp-6); padding-bottom: var(--sp-7); gap: var(--sp-6); } .hero-text { flex-basis: 100%; } }
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 480px) { .tiles { grid-template-columns: 1fr; } }
 .tile { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--chamfer); padding: 14px var(--sp-4); min-height: var(--tap-min); transition: transform var(--t-mid) ease, box-shadow var(--t-mid) ease, border-color var(--t-mid); }
 .tile .tt { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
 .tile .tt img { width: 22px; height: 22px; transition: transform .35s var(--ease-pop); }
