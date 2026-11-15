@@ -1,0 +1,89 @@
+/* Verifika Pro – design tokens v1.0 (2026-11-13)
+   Single source of truth for colour, type, spacing and shape.
+   Light theme on :root, dark theme on [data-theme="dark"] and prefers-color-scheme. */
+
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  /* Brand colours (fixed, do not theme) */
+  --vk-ink: #0F2238;        /* primary: logo, headings, primary buttons */
+  --vk-verdigris: #0B7A6F;  /* "verified": links, focus, verified states, PRO tag */
+  --vk-brass: #B7832F;      /* hallmark metal: level-3 badge and rare highlights only */
+  --vk-paper: #F4F6F7;      /* page ground */
+
+  /* Neutrals (blue-biased toward ink) */
+  --vk-n-0: #FFFFFF;
+  --vk-n-50: #F4F6F7;
+  --vk-n-100: #E8EDF0;
+  --vk-n-200: #D5DDE3;
+  --vk-n-400: #8A97A5;
+  --vk-n-600: #4A5A6B;
+  --vk-n-800: #22334A;
+  --vk-n-900: #0F2238;
+
+  /* Semantic (separate from brand accent) */
+  --vk-success: #2E7D32;
+  --vk-warning: #B26A00;
+  --vk-danger: #C0392B;
+  --vk-info: #2563A6;
+
+  /* Roles – light */
+  --bg: var(--vk-paper);
+  --surface: var(--vk-n-0);
+  --surface-2: var(--vk-n-100);
+  --border: var(--vk-n-200);
+  --text: var(--vk-ink);
+  --text-muted: var(--vk-n-600);
+  --text-faint: var(--vk-n-400);
+  --primary: var(--vk-ink);
+  --on-primary: #FFFFFF;
+  --accent: var(--vk-verdigris);
+  --on-accent: #FFFFFF;
+  --verified: var(--vk-verdigris);
+  --hallmark: var(--vk-brass);
+  --focus-ring: 0 0 0 3px rgba(11, 122, 111, .35);
+
+  /* Typography */
+  --font-display: "Schibsted Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --fs-xs: 12px;  --fs-sm: 14px;  --fs-md: 16px;  --fs-lg: 18px;
+  --fs-xl: 22px;  --fs-2xl: 28px; --fs-3xl: 36px;
+  --lh-tight: 1.15; --lh-body: 1.5;
+
+  /* Spacing (4px base) */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+
+  /* Shape: chamfer is the brand corner; radius stays small */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --chamfer: 8px; /* use with the .vk-chamfer clip-path helper */
+  --shadow-1: 0 1px 2px rgba(15, 34, 56, .08), 0 1px 1px rgba(15, 34, 56, .04);
+
+  /* Touch */
+  --tap-min: 44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1828; --surface: #12233A; --surface-2: #1A2E48; --border: #2A3F5A;
+    --text: #E8EEF2; --text-muted: #A9B6C4; --text-faint: #75859A;
+    --primary: #E8EEF2; --on-primary: #0F2238;
+    --accent: #3CC1B0; --on-accent: #06221F; --verified: #3CC1B0; --hallmark: #D9A54E;
+    --focus-ring: 0 0 0 3px rgba(60, 193, 176, .4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1828; --surface: #12233A; --surface-2: #1A2E48; --border: #2A3F5A;
+  --text: #E8EEF2; --text-muted: #A9B6C4; --text-faint: #75859A;
+  --primary: #E8EEF2; --on-primary: #0F2238;
+  --accent: #3CC1B0; --on-accent: #06221F; --verified: #3CC1B0; --hallmark: #D9A54E;
+  --focus-ring: 0 0 0 3px rgba(60, 193, 176, .4);
+  color-scheme: dark;
+}
+
+/* Helpers */
+.vk-chamfer { clip-path: polygon(var(--chamfer) 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, var(--chamfer) 100%, 0 calc(100% - var(--chamfer)), 0 var(--chamfer)); }
+.vk-ref { font-family: var(--font-mono); font-size: .92em; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
