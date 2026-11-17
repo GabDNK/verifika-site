@@ -3,7 +3,7 @@ window.VERIFIKA_SITE = {
  "v": 1,
  "env": "prod",
  "launched": false,
- "portal_url": "https://script.google.com/macros/s/AKfycbx9XWnyrz_78KqPBkzH8aod1kRUFhbRER7TDz9BHfuzlcZGsQxyb-3GqF3J6NouK1ox/exec",
+ "portal_url": "https://app.verifika.pro/",
  "site_url": "https://verifika.pro/",
  "frame_origin": "",
  "bookings_url": "",
