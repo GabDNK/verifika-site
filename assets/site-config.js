@@ -20,7 +20,7 @@ window.VERIFIKA_SITE = {
  },
  "legal": {
   "entity_name": "DNK Capitals",
-  "entity_email": "verifika@nexa-consult.com",
+  "entity_email": "admin@verifika.pro",
   "gdpr_rep_name": "Select Links SRL",
   "hosting": "GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA)"
  },
