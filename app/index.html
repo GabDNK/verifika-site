@@ -18,7 +18,7 @@
 <script src="/assets/site-config.js"></script>
 </head>
 <body>
-<!-- The portal (Google Apps Script web app) shown under verifika.pro (D-68). The portal address comes from the site configuration
+<!-- The portal shown under verifika.pro (D-68): app.verifika.pro (OVH, D-101; test.verifika.pro while the site is not launched) or the Apps Script web app. The portal address comes from the site configuration
      (setting site.portal_url, D-73 C3). Links from e-mails (?page=login&t=…, ?page=invite…, ?page=pass…, ?page=signup…) and site buttons
      (?page=join&kind=…&type=…) are passed on; one-time tokens and UTM are then removed from the address bar.
      An e-mail typed on the landing page goes to the sign-up form in the body of a POST request (never in an address, never in a message).
@@ -30,7 +30,8 @@
   (function () {
     'use strict';
     var C = window.VERIFIKA_SITE || {};
-    var base = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(C.portal_url || '') ? C.portal_url : '';
+    var OWN = /^https:\/\/(app|test)\.verifika\.pro\/?$/;
+    var base = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(C.portal_url || '') || OWN.test(C.portal_url || '') ? C.portal_url : '';
     var q = new URLSearchParams(location.search);
     // French wrapper for the cookie banner (the portal itself chooses its language)
     if (q.get('lang') === 'fr' && document.documentElement.lang !== 'fr') { location.replace('/fr/app/' + location.search); return; }
@@ -60,7 +61,7 @@
     var VALUES = /^(professional|company|agency|recruiter|freelance|job_seeker|direct_client|independent_recruiter)$/;
     var done = false;
     window.addEventListener('message', function (ev) {
-      var okOrigin = C.frame_origin ? ev.origin === C.frame_origin : ORIGIN_RE.test(ev.origin);
+      var okOrigin = C.frame_origin ? ev.origin === C.frame_origin : (OWN.test(base) ? ev.origin === base.replace(/\/$/, '') : ORIGIN_RE.test(ev.origin));
       var fromOurFrame = false; try { fromOurFrame = ev.source && ev.source.parent === frame.contentWindow; } catch (x) { fromOurFrame = false; }
       if (!okOrigin || !fromOurFrame) return;
       var d = ev.data || {};
