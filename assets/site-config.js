@@ -7,7 +7,7 @@ window.VERIFIKA_SITE = {
  "site_url": "https://verifika.pro/",
  "frame_origin": "",
  "bookings_url": "",
- "linkedin_url": "",
+ "linkedin_url": "https://www.linkedin.com/company/verifika-pro",
  "analytics": {
   "enabled": false,
   "ga4_id": "",
