@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=latin">
 <link rel="stylesheet" href="/assets/tokens.css?v=8d230a28c1">
-<link rel="stylesheet" href="/assets/site.css?v=17ed78eae1">
+<link rel="stylesheet" href="/assets/site.css?v=afcaf02403">
 <script src="/assets/site-config.js"></script>
 </head>
 <body class="page">
@@ -29,8 +29,8 @@
 </header>
 <main id="main" class="w legal">
   <h1 data-i18n="cookies.h1">Politique cookies</h1>
-  <p class="draft" data-i18n="legal.draft">Projet à faire valider par un avocat avant le lancement public.</p>
-  <p data-i18n="cookies.intro">Deux types de stockage. Ce dont le site a besoin est toujours actif. La mesure d’audience est désactivée tant que vous ne l’acceptez pas, et rien de Google Analytics ni de Microsoft Clarity n’est chargé avant. Vous pouvez changer d’avis à tout moment ; nous vous redemandons après 6 mois ou quand cette liste change.</p>
+  <p class="updated" data-i18n="cookies.version">Version 2 – 19 novembre 2026.</p>
+  <p data-i18n="cookies.intro">Ce site et le portail gardent quelques éléments dans votre navigateur. Ce dont ils ont besoin pour fonctionner est toujours actif. La mesure d’audience de ce site public reste désactivée tant que vous ne l’acceptez pas, et rien de Google Analytics ou de Microsoft Clarity n’est chargé avant. Le portail n’utilise jamais de mesure d’audience ni de cookie publicitaire. Vous pouvez changer votre choix à tout moment ; nous vous le redemandons après 6 mois ou quand cette liste change.</p>
   <p><button type="button" class="btn btn-s btn-sm" data-cookie-settings data-i18n="foot.cookie_settings">Paramètres des cookies</button></p>
   <h2 data-i18n="cookies.needed_h">Nécessaires au site</h2>
   <div class="table-wrap"><table class="ck-table">
@@ -39,7 +39,18 @@
       <tr><td class="mono">vk_consent</td><td>Verifika Pro</td><td data-i18n="cookies.p_consent">Votre choix sur les cookies, avec sa date et sa version (stockage du navigateur)</td><td data-i18n="cookies.d_6m">6 mois</td></tr>
       <tr><td class="mono">vk_visit</td><td>Verifika Pro</td><td data-i18n="cookies.p_visit">La façon dont vous êtes arrivé sur le site pendant cette visite, transmise quand vous créez un compte (stockage de session)</td><td data-i18n="cookies.d_session">Jusqu’à la fermeture de l’onglet</td></tr>
       <tr><td class="mono">vk_pass_email</td><td>Verifika Pro</td><td data-i18n="cookies.p_email">L’e-mail saisi pour commencer votre Pass, transmis au formulaire d’inscription puis supprimé aussitôt (stockage de session)</td><td data-i18n="cookies.d_seconds">Quelques secondes</td></tr>
-      <tr><td class="mono" data-i18n="cookies.n_portal">Session du portail</td><td>Google (Apps Script)</td><td data-i18n="cookies.p_portal">Vous garde connecté au portail (stockage de session du cadre du portail)</td><td data-i18n="cookies.d_session">Jusqu’à la fermeture de l’onglet</td></tr>
+    </tbody>
+  </table></div>
+  <h2 data-i18n="cookies.portal_h">Nécessaires au portail</h2>
+  <div class="table-wrap"><table class="ck-table">
+    <thead><tr><th data-i18n="cookies.c_name">Nom</th><th data-i18n="cookies.c_provider">Fournisseur</th><th data-i18n="cookies.c_purpose">Finalité</th><th data-i18n="cookies.c_duration">Durée</th></tr></thead>
+    <tbody>
+      <tr><td class="mono" data-i18n="cookies.n_portal">Session du portail</td><td>Verifika Pro</td><td data-i18n="cookies.p_portal">Vous garde connecté au portail (stockage de session) ; le serveur n’en garde qu’une empreinte, et elle prend fin à la déconnexion ou après quelques heures</td><td data-i18n="cookies.d_session">Jusqu’à la fermeture de l’onglet</td></tr>
+      <tr><td class="mono">vp_device</td><td>Verifika Pro</td><td data-i18n="cookies.p_device">Un nombre aléatoire pour ce navigateur, pour vous prévenir d’une connexion depuis un nouvel appareil (stockage du navigateur)</td><td data-i18n="cookies.d_until">Jusqu’à ce que vous l’effaciez</td></tr>
+      <tr><td class="mono">vk_rt_pass, vk_rt_done</td><td>Verifika Pro</td><td data-i18n="cookies.p_test">Garde votre évaluation ouverte dans cet onglet après le code, et note qu’elle a été envoyée (stockage de session)</td><td data-i18n="cookies.d_session">Jusqu’à la fermeture de l’onglet</td></tr>
+      <tr><td class="mono" data-i18n="cookies.n_prefs">Préférences</td><td>Verifika Pro</td><td data-i18n="cookies.p_prefs">Thème clair ou sombre, menus repliés, l’onglet et la fenêtre de discussion laissés ouverts (vk_theme, vk_nav_*, vk_inbox_tab, vk_dock)</td><td data-i18n="cookies.d_until">Jusqu’à ce que vous l’effaciez</td></tr>
+      <tr><td class="mono" data-i18n="cookies.n_drafts">Brouillons</td><td>Verifika Pro</td><td data-i18n="cookies.p_drafts">Un formulaire pas encore envoyé (un rapport, un candidat, une réponse d’évaluation), gardé sur cet appareil seulement pour ne rien perdre ; effacé à l’envoi</td><td data-i18n="cookies.d_until">Jusqu’à ce que vous l’effaciez</td></tr>
+      <tr><td class="mono">Cloudflare Turnstile</td><td>Cloudflare</td><td data-i18n="cookies.p_turnstile">Sur les formulaires d’inscription et de candidature seulement : vérifie que le formulaire est envoyé par une personne et non par un robot ; ni publicité, ni suivi d’un site à l’autre</td><td data-i18n="cookies.d_check">Le temps de la vérification</td></tr>
     </tbody>
   </table></div>
   <h2 data-i18n="cookies.ana_h">Mesure d’audience (avec votre consentement)</h2>

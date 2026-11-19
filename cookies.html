@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=latin">
 <link rel="stylesheet" href="/assets/tokens.css?v=8d230a28c1">
-<link rel="stylesheet" href="/assets/site.css?v=17ed78eae1">
+<link rel="stylesheet" href="/assets/site.css?v=afcaf02403">
 <script src="/assets/site-config.js"></script>
 </head>
 <body class="page">
@@ -29,8 +29,8 @@
 </header>
 <main id="main" class="w legal">
   <h1 data-i18n="cookies.h1">Cookie policy</h1>
-  <p class="draft" data-i18n="legal.draft">Draft to be validated by a lawyer before the public launch.</p>
-  <p data-i18n="cookies.intro">Two kinds of storage. What the site needs is always on. Audience measurement is off until you accept it, and nothing of Google Analytics or Microsoft Clarity is loaded before. You can change your choice at any time; we ask again after 6 months or when this list changes.</p>
+  <p class="updated" data-i18n="cookies.version">Version 2 – 19 November 2026.</p>
+  <p data-i18n="cookies.intro">This site and the portal store a few things in your browser. What they need to work is always on. Audience measurement of this public site is off until you accept it, and nothing of Google Analytics or Microsoft Clarity is loaded before. The portal never uses audience measurement or advertising cookies. You can change your choice at any time; we ask again after 6 months or when this list changes.</p>
   <p><button type="button" class="btn btn-s btn-sm" data-cookie-settings data-i18n="foot.cookie_settings">Cookie settings</button></p>
   <h2 data-i18n="cookies.needed_h">Needed for the site</h2>
   <div class="table-wrap"><table class="ck-table">
@@ -39,7 +39,18 @@
       <tr><td class="mono">vk_consent</td><td>Verifika Pro</td><td data-i18n="cookies.p_consent">Your cookie choice, with its date and version (browser storage)</td><td data-i18n="cookies.d_6m">6 months</td></tr>
       <tr><td class="mono">vk_visit</td><td>Verifika Pro</td><td data-i18n="cookies.p_visit">How you reached the site during this visit, passed on when you create an account (session storage)</td><td data-i18n="cookies.d_session">Until the tab is closed</td></tr>
       <tr><td class="mono">vk_pass_email</td><td>Verifika Pro</td><td data-i18n="cookies.p_email">The e-mail you typed to start your Pass, passed to the sign-up form and deleted at once (session storage)</td><td data-i18n="cookies.d_seconds">A few seconds</td></tr>
-      <tr><td class="mono" data-i18n="cookies.n_portal">Portal session</td><td>Google (Apps Script)</td><td data-i18n="cookies.p_portal">Keeps you signed in to the portal (session storage of the portal frame)</td><td data-i18n="cookies.d_session">Until the tab is closed</td></tr>
+    </tbody>
+  </table></div>
+  <h2 data-i18n="cookies.portal_h">Needed for the portal</h2>
+  <div class="table-wrap"><table class="ck-table">
+    <thead><tr><th data-i18n="cookies.c_name">Name</th><th data-i18n="cookies.c_provider">Provider</th><th data-i18n="cookies.c_purpose">Purpose</th><th data-i18n="cookies.c_duration">Duration</th></tr></thead>
+    <tbody>
+      <tr><td class="mono" data-i18n="cookies.n_portal">Portal session</td><td>Verifika Pro</td><td data-i18n="cookies.p_portal">Keeps you signed in to the portal (session storage); the server keeps only a fingerprint of it, and it ends at sign-out or after a few hours</td><td data-i18n="cookies.d_session">Until the tab is closed</td></tr>
+      <tr><td class="mono">vp_device</td><td>Verifika Pro</td><td data-i18n="cookies.p_device">A random number for this browser, so that we can warn you of a sign-in from a new device (browser storage)</td><td data-i18n="cookies.d_until">Until you clear it</td></tr>
+      <tr><td class="mono">vk_rt_pass, vk_rt_done</td><td>Verifika Pro</td><td data-i18n="cookies.p_test">Keeps your assessment open in this tab after the code, and remembers that it was sent (session storage)</td><td data-i18n="cookies.d_session">Until the tab is closed</td></tr>
+      <tr><td class="mono" data-i18n="cookies.n_prefs">Preferences</td><td>Verifika Pro</td><td data-i18n="cookies.p_prefs">Light or dark theme, menus folded, the tab and the chat window you left open (vk_theme, vk_nav_*, vk_inbox_tab, vk_dock)</td><td data-i18n="cookies.d_until">Until you clear it</td></tr>
+      <tr><td class="mono" data-i18n="cookies.n_drafts">Drafts</td><td>Verifika Pro</td><td data-i18n="cookies.p_drafts">A form you have not sent yet (a report, a candidate, an assessment answer), kept on this device only so that nothing is lost; deleted when it is sent</td><td data-i18n="cookies.d_until">Until you clear it</td></tr>
+      <tr><td class="mono">Cloudflare Turnstile</td><td>Cloudflare</td><td data-i18n="cookies.p_turnstile">On the sign-up and application forms only: checks that the form is sent by a person and not a robot; no advertising, no tracking across sites</td><td data-i18n="cookies.d_check">The time of the check</td></tr>
     </tbody>
   </table></div>
   <h2 data-i18n="cookies.ana_h">Audience measurement (with your consent)</h2>
